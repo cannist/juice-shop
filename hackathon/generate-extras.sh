@@ -6,7 +6,8 @@ set -eu
                 ./hackathon/LinesOfCode.ql \
                 ./hackathon/LinesOfComment.ql \
                 ./hackathon/RemoteFlowSources.ql \
-                
+                --library-path-dependency=codeql-javascript
+
 # Convert to csv
 /opt/hostedtoolcache/CodeQL/0.0.0-20201106/x64/codeql/codeql bqrs decode --format=csv scratch/database/results/hackathon/LinesOfCode.bqrs > hackathon/LinesOfCode.csv
 /opt/hostedtoolcache/CodeQL/0.0.0-20201106/x64/codeql/codeql bqrs decode --format=csv scratch/database/results/hackathon/LinesOfComment.bqrs > hackathon/LinesOfComment.csv
