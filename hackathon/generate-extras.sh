@@ -5,7 +5,7 @@ set -eu
 /opt/hostedtoolcache/CodeQL/0.0.0-20201106/x64/codeql/codeql database run-queries /home/runner/work/_temp/codeql_databases/javascript \
                 ./hackathon/LinesOfCode.ql \
                 ./hackathon/LinesOfComment.ql \
-                ./chackathon/RemoteFlowSources.ql \
+                ./hackathon/RemoteFlowSources.ql \
                 
 # Convert to csv
 /opt/hostedtoolcache/CodeQL/0.0.0-20201106/x64/codeql/codeql bqrs decode --format=csv scratch/database/results/hackathon/LinesOfCode.bqrs > hackathon/LinesOfCode.csv
