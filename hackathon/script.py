@@ -63,12 +63,19 @@ def summarize_locations(rows):
     return str(len(rows)) + ' locations'
 
 def main(args):
+    print("Reading sarif")
     sarif = read_sarif(args.sarif)
+    print("Merging Lines of Code results")
     merge_results('hackathon/LinesOfCode.csv', 'Lines of code', summarize_lines_of_code, sarif)
+    print("Merging Lines of comment results")
     merge_results('hackathon/LinesOfComment.csv', 'Lines of comment', summarize_lines_of_code, sarif)
-    merge_log('hackathon/database/log/database-create-*', 'Database creation log', sarif)
+    print("Merging database creation log")
+    merge_log('/home/runner/work/_temp/codeql_databases/javascript/log/database-create-*', 'Database creation log', sarif)
+    print("Merging remote flow sources")
     merge_results('hackathon/RemoteFlowSources.csv', 'Remote flow sources', summarize_locations, sarif)
+    print("Writing sarif")
     write_sarif(sarif, args.output)
+    print("Done")
     return 0
 
 if __name__ == '__main__':
