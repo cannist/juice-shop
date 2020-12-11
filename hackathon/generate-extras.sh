@@ -15,5 +15,5 @@ set -eu
 /opt/hostedtoolcache/CodeQL/0.0.0-20201106/x64/codeql/codeql bqrs decode --format=csv /home/runner/work/_temp/codeql_databases/javascript/results/hackathon/RemoteFlowSources.bqrs > hackathon/RemoteFlowSources.csv
 
 # Merge results into sarif
-./hackathon/script.py --sarif /home/runner/work/juice-shop/results/javascript-builtin.sarif --output /home/runner/work/juice-shop/results/javascript-builtin.sarif
+python3 ./hackathon/script.py --sarif /home/runner/work/juice-shop/results/javascript-builtin.sarif --output /home/runner/work/juice-shop/results/javascript-builtin.sarif
 
