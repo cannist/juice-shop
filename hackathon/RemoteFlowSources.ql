@@ -1,6 +1,5 @@
 import javascript
 
-// placeholder - will replace with RemoteFlowSource
 from
   RemoteFlowSource rep, string f, int startLine, int endLine, int startColumn, int endColumn,
   string sourceType
