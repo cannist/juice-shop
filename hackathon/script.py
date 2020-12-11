@@ -64,10 +64,10 @@ def summarize_locations(rows):
 
 def main(args):
     sarif = read_sarif(args.sarif)
-    merge_results('scratch/LinesOfCode.csv', 'Lines of code', summarize_lines_of_code, sarif)
-    merge_results('scratch/LinesOfComment.csv', 'Lines of comment', summarize_lines_of_code, sarif)
-    merge_log('scratch/database/log/database-create-*', 'Database creation log', sarif)
-    merge_results('scratch/RemoteFlowSources.csv', 'Remote flow sources', summarize_locations, sarif)
+    merge_results('hackathon/LinesOfCode.csv', 'Lines of code', summarize_lines_of_code, sarif)
+    merge_results('hackathon/LinesOfComment.csv', 'Lines of comment', summarize_lines_of_code, sarif)
+    merge_log('hackathon/database/log/database-create-*', 'Database creation log', sarif)
+    merge_results('hackathon/RemoteFlowSources.csv', 'Remote flow sources', summarize_locations, sarif)
     write_sarif(sarif, args.output)
     return 0
 
