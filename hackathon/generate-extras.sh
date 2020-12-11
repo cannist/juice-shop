@@ -8,6 +8,9 @@ set -eu
                 ./hackathon/RemoteFlowSources.ql \
                 --library-path-dependency=codeql-javascript
 
+# Find bqrs files
+find / | grep bqrs
+
 # Convert to csv
 /opt/hostedtoolcache/CodeQL/0.0.0-20201106/x64/codeql/codeql bqrs decode --format=csv hackathon/LinesOfCode.bqrs > hackathon/LinesOfCode.csv
 /opt/hostedtoolcache/CodeQL/0.0.0-20201106/x64/codeql/codeql bqrs decode --format=csv hackathon/LinesOfComment.bqrs > hackathon/LinesOfComment.csv
