@@ -70,7 +70,7 @@ def main(args):
     print("Merging Lines of comment results")
     merge_results('hackathon/LinesOfComment.csv', 'Lines of comment', summarize_lines_of_code, sarif)
     print("Merging database creation log")
-    merge_log('/home/runner/work/_temp/codeql_databases/javascript/log/database-create-*', 'Database creation log', sarif)
+    merge_log('/home/runner/work/_temp/codeql_databases/javascript/log/database-finalize-*', 'Database creation log', sarif)
     print("Merging remote flow sources")
     merge_results('hackathon/RemoteFlowSources.csv', 'Remote flow sources', summarize_locations, sarif)
     print("Writing sarif")

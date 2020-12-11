@@ -1,9 +1,6 @@
 #!/bin/bash
 set -eu
 
-# Find database log location
-find / | grep log
-
 # Run extra queries
 /opt/hostedtoolcache/CodeQL/0.0.0-20201106/x64/codeql/codeql database run-queries /home/runner/work/_temp/codeql_databases/javascript \
                 ./hackathon/LinesOfCode.ql \
